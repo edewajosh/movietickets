@@ -1,9 +1,22 @@
 {% extends "movies/layout.html" %}
 
 {% block content %}
-    <div class="row"> 
-        <div class="col s4">Column one</div>
-        <div class="col s4">Column two</div>
-        <div class="col s4">Column three</div>
+{% for movie in movies %}
+{% if forloop.first %}<div class="row">{% endif %}
+    <div class="col s4">
+        <div class="card">
+            <div class="card-image">
+                {% if movie.image %}
+                    <img class="responsive-img" src="{{movie.image.url}}" alt="No Image Available">
+                {% endif %}
+            </div>
+            <div class="card-content">
+                <p style="font-size:150%"><b>Movie : </b>{{movie.name}}</p>
+                <p style="font-family:'Franklin Gothic Medium'"><b>Time : </b>{{movie.showing_at}}</p>
+            </div>
+        </div>
     </div>
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+{% endfor %}
 {% endblock %}

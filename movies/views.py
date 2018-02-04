@@ -10,4 +10,8 @@ def index(request):
     return render(request, 'movies/index.html', context)
 
 def details(request):
-    return render(request, 'movies/details.html')
+    movies = Movies.objects.order_by('-date_posted')
+    context = {
+        'movies' : movies
+    }
+    return render(request, 'movies/details.html', context)
