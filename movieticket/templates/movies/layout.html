@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
   <title>Movie</title>
 </head>
 <body>
+    {% block head %}
+    {% endblock %}
+  <!-- scripts for and tags for slidershow -->
+
 
     <nav class="teal dark-4">
         <div class="nav-wrapper">
           <a href="#!" class="brand-logo center">Logo</a>
           <ul class="left hide-on-med-and-down">
-            <li><a href="#/">Home</a></li>
-            <li><a href="#posts/articles">Movies</a></li>
+            <li><a href="/movies">Home</a></li>
+            <li><a href="/movies/details">Movies</a></li>
             <li class="active"><a href="#collapsible.html">About</a></li>
           </ul>
         </div>
