@@ -3,8 +3,11 @@ from django.http import HttpResponse
 from .models import Movies
 
 def index(request):
-    movie = Movies.objects.order_by('-date_posted')
+    movies = Movies.objects.order_by('-date_posted')[:6]
     context = {
-        'movie' : movie
+        'movies' : movies
     }
     return render(request, 'movies/index.html', context)
+
+def details(request):
+    return render(request, 'movies/details.html')
