@@ -1,9 +1,9 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from .models import Movies
-
+from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
+from .forms import UserRegistrationForm
 
 def index(request):
     movies = Movies.objects.order_by('-date_posted')[:6]
@@ -20,19 +20,22 @@ def details(request):
         'movies' : movies
     }
     return render(request, 'movies/details.html', context)
-
-"""
-def signup(request):
+def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('home')
+            userObj = form.cleaned_data
+            username = userObj['username']
+            email = userObj['email']
+            password = userObj['password']
+
+            if not (User.objects.filter(username=username).exists() or User.objects.filter(email=email).exists()):
+                User.objects.create_user(username, email, password)
+                user = authenticate(username=username, password=password)
+                login(request, user)
+                return HttpResponseRedirect('/')
+            else:
+                raise forms.ValidationError('Looks like a username with that email or password already exist')
     else:
-        form = UserCreationForm()
-    return render(request, 'movies/signup.html', {'form' : form})
-"""
+        form = UserRegistrationForm()
+    return render(request, 'movies/register.html', {'form' : form})

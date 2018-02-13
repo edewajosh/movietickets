@@ -18,9 +18,15 @@
         <div class="nav-wrapper">
           <a href="#!" class="brand-logo center">Logo</a>
           <ul class="left hide-on-med-and-down">
+            {% if user.is_authenticated %}
             <li><a href="/movies">Home</a></li>
             <li><a href="/movies/details">Movies</a></li>
             <li class="active"><a href="#collapsible.html">About</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Create Account</a></li>
+            {% endif %}
           </ul>
         </div>
       </nav>
