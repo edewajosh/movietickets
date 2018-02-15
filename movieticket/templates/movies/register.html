@@ -1,6 +1,7 @@
 {% extends "movies/layout.html" %}
 
 {% block content %}
+<h4 class="black-text">Create Account</h4>
     <form method="POST">
         {% csrf_token %} {{ form.as_p }}
         <button type="submit">Submit</button>

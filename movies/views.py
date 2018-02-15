@@ -43,8 +43,8 @@ def register(request):
 def ticketView(request):
     form = TicketForm(request.POST)
     if form.is_valid():
-        form.save()
-    
+        ticket = form.save(commit=True)
+        ticket.save()
     context = {'form' : form}
 
     return render(request, 'movies/ticket.html', context)

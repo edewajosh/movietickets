@@ -1,6 +1,7 @@
 {% extends "movies/layout.html" %}
 
 {% block content %}
+<h5 class="black-text">Order Ticket</h5>
     {% csrf_token %}
     {{form}}
     <button type="submit">Submit</button>
