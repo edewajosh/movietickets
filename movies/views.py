@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from .models import Movies
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm, TicketForm
 
 def index(request):
     movies = Movies.objects.order_by('-date_posted')[:6]
@@ -39,3 +39,12 @@ def register(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'movies/register.html', {'form' : form})
+
+def ticketView(request):
+    form = TicketForm(request.POST)
+    if form.is_valid():
+        form.save()
+    
+    context = {'form' : form}
+
+    return render(request, 'movies/ticket.html', context)

@@ -1,0 +1,7 @@
+{% extends "movies/layout.html" %}
+
+{% block content %}
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Submit</button>
+{% endblock %}

@@ -13,3 +13,14 @@ class Movies(models.Model):
 
     class Meta:
         verbose_name_plural = "Movies"
+
+class Ticket(models.Model):
+    username = models.CharField(max_length=100)
+    phonenumber = models.CharField(max_length=15)
+    numberofseats = models.IntegerField()
+    seats = models.CharField(max_length=30)
+    movie = models.ForeignKey(Movies, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.username
+
