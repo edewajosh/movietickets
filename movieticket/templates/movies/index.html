@@ -55,11 +55,13 @@
     {% if forloop.first %}<div class="row">{% endif %}
         <div class="col s4">
             <div class="card">
+                <a href="/movies/ticket">
                 <div class="card-image">
                     {% if movie.image %}
                         <img class="responsive-img" src="{{movie.image.url}}" alt="No Image Available">
                     {% endif %}
                 </div>
+                </a>
                 <div class="card-content">
                     <p style="font-size:100%"><b>Movie : </b>{{movie.name}}</p>
                     <p style="font-family:'Franklin Gothic Medium'"><b>Time : </b>{{movie.showing_at}}</p>
