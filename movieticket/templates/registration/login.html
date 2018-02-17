@@ -1,16 +1,19 @@
 {% extends "movies/layout.html" %}
 {% block content%}
-<h5 class="black-text">Sign In</h5>
+<div class="container-fluid">
+    <h5 class="display-4">Sign In</h5>
         <form method="POST">
             {% csrf_token %}
-            <p>
+            <div class="form-group">
                 <label>Username</label>
                 <input type="text" name="username">
-            </p>
-            <p>
+            </div>
+            <div class="form-group">
                 <label>Password</label>
                 <input type="password" name="password">
-            </p>
-             <button type="submit">Login</button>
+            </div>
+             <button class="btn btn-primary" type="submit">Login</button>
          </form>
+</div>
+
 {% endblock %}

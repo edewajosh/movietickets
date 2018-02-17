@@ -7,15 +7,15 @@
     <div class="col s4">
         <div class="card">
             <a href="/movies/ticket">
-            <div class="card-image">
+            <div class="card-img-top">
                 {% if movie.image %}
-                    <img class="responsive-img" src="{{movie.image.url}}" alt="No Image Available">
+                    <img class="img-fluid" src="{{movie.image.url}}" alt="No Image Available">
                 {% endif %}
             </div>
             </a>
             <div class="card-content">
-                <p><b>Movie : </b>{{movie.name}}</p>
-                <p><b>Time : </b>{{movie.showing_at}}</p>
+                <p class="card-text"><b>Movie : </b>{{movie.name}}</p>
+                <p class="card-text"><b>Time : </b>{{movie.showing_at}}</p>
             </div>
         </div>
     </div>
