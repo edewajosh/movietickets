@@ -17,5 +17,4 @@ class TicketForm(forms.ModelForm):
             'phonenumber':forms.TextInput(attrs = {'class':'form-control'}),
             'numberofseats':forms.TextInput(attrs = {'class':'form-control', 'type':'number'}),
             'seats':forms.TextInput(attrs = {'class':'form-control'}),
-            #'movie':forms.SelectMultiple(attrs = {'class':'form-control'})
         }
