@@ -41,12 +41,12 @@ def register(request):
     return render(request, 'movies/register.html', {'form' : form})
 
 def ticketView(request):
-    form_class = TicketForm
-    form = form_class(request.POST or None)
-    if request.method == "POST":
-        if form.is_valid():
-            ticket = form.save(commit=True)
-            ticket.save()
-        return HttpResponseRedirect('/')
-        
-    return render(request, 'movies/ticket.html', {'form': form})
+    form = TicketForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/booked')
+    context = {'form': form}  
+    return render(request, 'movies/ticket.html',context)
+
+def booked(request):
+    return render(request, 'movies/ticket_details.html')
