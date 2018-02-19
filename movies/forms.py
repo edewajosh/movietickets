@@ -7,7 +7,7 @@ class UserRegistrationForm(forms.Form):
 
 
 class TicketForm(forms.ModelForm):
-    movie = forms.ModelChoiceField(queryset=Movies.objects.all())
+    movie = forms.ModelChoiceField(queryset=Movies.objects.all(), widget=forms.Select(attrs={'class': 'hidden', 'class' :'form-control'}))
     class Meta:
         model = Ticket
         fields = '__all__'
@@ -15,7 +15,7 @@ class TicketForm(forms.ModelForm):
         widgets = {
             'username':forms.TextInput(attrs = {'class':'form-control'}),
             'phonenumber':forms.TextInput(attrs = {'class':'form-control'}),
-            #'numberofseats':forms.TextInput(attrs = {'class':'form-control'}),
+            'numberofseats':forms.TextInput(attrs = {'class':'form-control', 'type':'number'}),
             'seats':forms.TextInput(attrs = {'class':'form-control'}),
-            #'movie':forms.TextInput(attrs = {'class':'form-control'})
+            #'movie':forms.SelectMultiple(attrs = {'class':'form-control'})
         }
