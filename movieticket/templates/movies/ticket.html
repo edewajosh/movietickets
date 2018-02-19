@@ -3,6 +3,8 @@
 {% block content %}
 <h5 class="black-text">Order Ticket</h5>
     {% csrf_token %}
-    {{form}}
-    <button type="submit">Submit</button>
+    <div class="form-group">
+        {{form}}
+    </div> 
+    <button class="btn btn-primary" type="submit">Submit</button>
 {% endblock %}

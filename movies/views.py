@@ -47,6 +47,6 @@ def ticketView(request):
         if form.is_valid():
             ticket = form.save(commit=True)
             ticket.save()
-            return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/')
         
     return render(request, 'movies/ticket.html', {'form': form})
