@@ -10,39 +10,53 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <title>Movie</title>
 </head>
+<style>
+  #josh{
+    padding-top: 100px;
+    background-color: #fef5e7;
+  }
+</style>
 <body>
     {% block head %}
     {% endblock %}
   <!-- scripts for and tags for slidershow -->
+  <div class="container" id="josh">
 
-
-  
-  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">Movie</a>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="/movies/details/">Movies</a>
-        <a class="nav-item nav-link" href="#">About</a>
-        <!---<a class="nav-item nav-link disabled" href="#">Disabled</a>-->
-      </div>
-    </div>
-    <div class='nav navbar-nav navbar-right'>
-      <a class="nav-item nav-link" href="/login">Login</a>
-      <a class="nav-item nav-link" href="/register">Register</a>
-    </div>
-  </nav>
-
-  <header class="container center-align">
-  </header>
+  </div>
 
   <div class="container">
-    {% block content %}
-    {% endblock %}
-    <br>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Movie</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="/movies/details/">Movies</a>
+          <a class="nav-item nav-link" href="#">About</a>
+          <!---<a class="nav-item nav-link disabled" href="#">Disabled</a>-->
+        </div>
+      </div>
+      <div class='nav navbar-nav navbar-right'>
+        <a class="nav-item nav-link" href="/login">Login</a>
+        <a class="nav-item nav-link" href="/register">Register</a>
+      </div>
+    </nav>
+  
+    <header class="container center-align">
+    </header>
+    <hr>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+      <br>
+    </div>
   </div>
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">@movie.com</span>
+    </div>
+  </footer>
 </body>
 </html>

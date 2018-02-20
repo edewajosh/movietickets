@@ -1,7 +1,7 @@
 {% extends "movies/layout.html" %}
 {% block content%}
-<div class="container-fluid">
-    <h5 class="display-4">Sign In</h5>
+<div class="container-fluid bg-inverse text-white">
+    <h5 class="display-4 text-white">Sign In</h5>
         <form method="POST">
             {% csrf_token %}
             <div class="form-group">
@@ -12,7 +12,9 @@
                 <label>Password</label>
                 <input class="form-control" type="password" name="password">
             </div>
-             <button class="btn btn-primary" type="submit">Login</button>
+            <div class="form-group ">
+                <button class="btn btn-danger " type="submit">Login</button>
+            </div>
          </form>
 </div>
 

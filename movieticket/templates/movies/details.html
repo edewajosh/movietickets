@@ -1,9 +1,9 @@
 {% extends "movies/layout.html" %}
 
 {% block content %}
-<hr>
-{% for movie in movies %}
-{% if forloop.first %}<div class="row">{% endif %}
+<div class="container bg-inverse">
+    {% for movie in movies %}
+    {% if forloop.first %}<div class="row">{% endif %}
     <div class="col s4">
         <div class="card">
             <a href="/movies/ticket">
@@ -23,4 +23,5 @@
     {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
     {% if forloop.last %}<hr></div>{% endif %}
 {% endfor %}
+</div>
 {% endblock %}
