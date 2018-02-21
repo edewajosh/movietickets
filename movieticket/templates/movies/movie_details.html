@@ -1,0 +1,21 @@
+{% include "movies/layout.html" %}
+
+{% block content %}
+<div class="container">
+    <img class="img-responsive" src="{{movies.image.url}}" alt="{{movies.name}}">
+</div>
+<div class="container">
+    {% for text in texts %}
+    <p>text.name</p>
+    <p>text.comment</p>
+    {% endfor %}
+</div>
+<div class="container">
+    <form  method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form }}
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Movies,Ticket
+from .models import Movies,Ticket, Comments
 
 class MoviesInline(admin.TabularInline):
     model = Movies
@@ -17,3 +17,9 @@ class TicketAdmin(admin.ModelAdmin):
     list_filter = ["movie", "username"]
     search_fields = ["username"]
 admin.site.register(Ticket, TicketAdmin)
+
+class CommentsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'comment', 'email')
+    list_filter = ['comment']
+
+admin.site.register(Comments, CommentsAdmin)

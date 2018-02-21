@@ -2,6 +2,15 @@
 {% load static %}
 {% block content %}
     <div class="container bg-inverse">
+            {% if messages %}
+            <div class="row">
+                <div class="col-sm-12 text-white">
+                    {% for message in messages %}
+                        <p{% if message.tags %} class="alert alert-success"{% endif %}>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
         <div class="row no-gutter">
             <div class="col-2">
                 <div class="card" style="width: 18rem;">
