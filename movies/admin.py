@@ -19,7 +19,7 @@ class TicketAdmin(admin.ModelAdmin):
 admin.site.register(Ticket, TicketAdmin)
 
 class CommentsAdmin(admin.ModelAdmin):
-    list_display = ('name', 'comment', 'email')
+    list_display = ('name', 'movie','comment', 'email', 'date_posted')
     list_filter = ['comment']
 
 admin.site.register(Comments, CommentsAdmin)

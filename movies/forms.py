@@ -22,7 +22,7 @@ class TicketForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comments
-        exclude = ['movie']
+        exclude = ['movie', 'date_posted']
         widgets = {
             'name':forms.TextInput(attrs={'class':'form-control'}),
             'comment':forms.Textarea(attrs={'class':'form-control'}),

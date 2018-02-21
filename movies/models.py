@@ -24,10 +24,11 @@ class Ticket(models.Model):
     def __str__(self):
         return self.username
 class Comments(models.Model):
+    movie = models.ForeignKey(Movies, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     comment = models.TextField()
     email = models.EmailField()
-    movie = models.ForeignKey(Movies, on_delete=models.CASCADE)
+    date_posted = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
         return self.name

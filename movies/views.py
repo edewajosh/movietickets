@@ -57,7 +57,7 @@ def booked(request,id):
 def movie(request, id):
     form = CommentForm(request.POST or None)
     movies = get_object_or_404(Movies, pk=id)
-    texts = get_object_or_404(Comments, pk=movies.name)
+    texts = Comments.objects.filter(comment__exact=movies.name)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect('/movie')
