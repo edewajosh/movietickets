@@ -24,7 +24,7 @@ class Ticket(models.Model):
     def __str__(self):
         return self.username
 class Comments(models.Model):
-    movie = models.ForeignKey(Movies, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movies, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=100)
     comment = models.TextField()
     email = models.EmailField()

@@ -48,7 +48,7 @@ def ticketView(request):
         form.save()
         messages.success(request, "Thank You, You have successfully Reserved the Seat")
         return HttpResponseRedirect('/booked')
-    context = {'form': form}  
+    context = {'form': form}
     return render(request, 'movies/ticket.html',context)
 
 def booked(request,id):
@@ -56,14 +56,14 @@ def booked(request,id):
 
 def movie(request, id):
     form = CommentForm(request.POST or None)
-    movies = get_object_or_404(Movies, pk=id)
-    texts = Comments.objects.filter(comment__exact=movies.name)
+    movie = get_object_or_404(Movies, pk=id)
+    comments = Comments.objects.filter(comments__movies__id=movie)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect('/movie')
     context = {
         'form':form,
-        'movies':movies,
-        'texts':texts,
+        'movie':movie,
+        'comments':comments,
         }
     return render(request, 'movies/movie_details.html', context)
