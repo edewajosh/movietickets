@@ -1,14 +1,14 @@
 {% extends "movies/layout.html" %}
 
 {% block content %}
-<div class=" container p-3 mb-2 bg-inverse text-white">
+<div class=" container p-3 mb-2">
     <h4 class="white-text">Create Account</h4>
     <form method="POST">
         {% csrf_token %}
         <div class="form-group">
             {{ form.as_p }}
         </div> 
-        <button class="btn btn-danger" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 </div>
 {% endblock content %}

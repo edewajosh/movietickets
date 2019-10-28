@@ -1,7 +1,7 @@
 {% extends 'movies/layout.html' %}
 {% load static %}
 {% block content %}
-    <div class="container bg-inverse">
+    <div class="container">
             {% if messages %}
             <div class="row">
                 <div class="col-sm-12 text-white">
@@ -12,20 +12,8 @@
             </div>
             {% endif %}
         <div class="row no-gutter">
-            <div class="col-2">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-header">
-                      Contacts
-                    </div>
-                    <ul class="list-group ">
-                      <li class="list-group-item">Email</li>
-                      <li class="list-group-item">Phone</li>
-                      <li class="list-group-item">Twitter</li>
-                      <li class="list-group-item">Facebook</li>
-                    </ul>
-                  </div>
-            </div>
-            <div class="col-10 ">
+            
+            <div class="col-12 ">
                 <!-- slider show -->
     <div class="jumbotron-fluid">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">

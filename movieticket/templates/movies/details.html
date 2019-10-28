@@ -1,7 +1,7 @@
 {% extends "movies/layout.html" %}
 
 {% block content %}
-<div class="container bg-inverse">
+<div class="container">
     {% for movie in movies %}
     {% if forloop.first %}<div class="row">{% endif %}
     <div class="col-sm-4">
