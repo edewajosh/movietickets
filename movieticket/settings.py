@@ -77,15 +77,10 @@ WSGI_APPLICATION = 'movieticket.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'movieticket',
-        'USER': 'root',
-        'PASSWORD' : '10169',
-        'HOST': 'localhost',
-        'PORT' : ''
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
